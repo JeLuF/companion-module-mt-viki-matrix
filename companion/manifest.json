@@ -5,8 +5,8 @@
 	"description": "Companion module for MT Viki HDMI Matrix",
 	"version": "0.1.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-mt-viki-matrix.git",
-	"bugs": "https://github.com/bitfocus/companion-module-mt-viki-matrix/issues",
+	"repository": "git+https://github.com/JeLuF/companion-module-mt-viki-matrix.git",
+	"bugs": "https://github.com/JeLuF/companion-module-mt-viki-matrix/issues",
 	"maintainers": [
 		{
 			"name": "Jens Frank",
