@@ -1,0 +1,21 @@
+{
+	"name": "mt-viki-matrix",
+	"version": "0.1.0",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"format": "prettier --write ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/bitfocus/companion-module-mt-viki-matrix.git"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@companion-module/tools": "^1.2.0"
+	},
+	"dependencies": {
+		"@companion-module/base": "~1.4.1"
+	}
+}

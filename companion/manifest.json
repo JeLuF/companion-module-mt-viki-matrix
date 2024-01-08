@@ -1,0 +1,26 @@
+{
+	"id": "mt-viki-matrix",
+	"name": "mt-viki-matrix",
+	"shortname": "mt-viki-matrix",
+	"description": "Companion module for MT Viki HDMI Matrix",
+	"version": "0.1.0",
+	"license": "MIT",
+	"repository": "git+https://github.com/bitfocus/companion-module-mt-viki-matrix.git",
+	"bugs": "https://github.com/bitfocus/companion-module-mt-viki-matrix/issues",
+	"maintainers": [
+		{
+			"name": "Jens Frank",
+			"email": "jf@mormo.org"
+		}
+	],
+	"legacyIds": [],
+	"runtime": {
+		"type": "node18",
+		"api": "nodejs-ipc",
+		"apiVersion": "0.0.0",
+		"entrypoint": "../index.js"
+	},
+	"manufacturer": "MT VIKI",
+	"products": ["MT-HD0808 8x8 HDMI Matrix"],
+	"keywords": ["HDMI Matrix"]
+}
