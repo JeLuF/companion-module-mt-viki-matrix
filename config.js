@@ -26,6 +26,19 @@ export function getConfigFields() {
 			max: 65535,
 			default: 8080,
 		},
+                {
+                        type: 'dropdown',
+                        label: 'Matrix Size',
+                        id: 'matrix_size',
+                        default: '1',
+                        choices: [
+				{ id: '2x2', label: '2x2' },
+				{ id: '4x2', label: '4x2' },
+				{ id: '4x4', label: '4x4' },
+				{ id: '8x8', label: '8x8' },
+				{ id: '16x16', label: '16x16' },
+			],
+                },
 		{
 			type: 'number',
 			id: 'poll_interval',

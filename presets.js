@@ -87,7 +87,7 @@ export function getPresetDefinitions(self) {
 			category: 'All',
 			name: 'All',
 			style: {
-				text: `All\\n${input.label}`,
+				text: `${input.label}\\nTo All`,
 				size: '18',
 				color: combineRgb(255, 255, 255),
 				bgcolor: combineRgb(32, 0, 0),
