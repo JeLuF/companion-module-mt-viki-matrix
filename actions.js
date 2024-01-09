@@ -29,7 +29,7 @@ export function getActionDefinitions(self) {
 				},
 			],
 			callback: (action) => {
-				self.sendCommmand(`SW ${self.selectedInput} ${action.options.output}`)
+				self.sendCommand(`SW ${self.selectedInput} ${action.options.output}`)
 				self.updateRoute(action.options.output, self.selectedInput)
 
 				self.checkFeedbacks()
@@ -54,8 +54,38 @@ export function getActionDefinitions(self) {
 				},
 			],
 			callback: (action) => {
-				self.sendCommmand(`SW ${action.options.input} ${action.options.output}`)
+				self.sendCommand(`SW ${action.options.input} ${action.options.output}`)
 				self.updateRoute(action.options.output, action.options.input)
+
+				self.checkFeedbacks()
+			},
+		},
+		lock_keys: {
+			name: 'Lock keys',
+			options: [],
+			callback: (action) => {
+				self.sendCommand(`SetKeyLock 1`)
+				self.updateLock(1)
+
+				self.checkFeedbacks()
+			},
+		},
+		unlock_keys: {
+			name: 'Unlock keys',
+			options: [],
+			callback: (action) => {
+				self.sendCommand(`SetKeyLock 0`)
+				self.updateLock(0)
+
+				self.checkFeedbacks()
+			},
+		},
+		toggle_keylock: {
+			name: 'Toggle keylock',
+			options: [],
+			callback: (action) => {
+				self.sendCommand(`SetKeyLock ${ 1 - self.keylock }`)
+				self.updateLock(1 - self.keylock)
 
 				self.checkFeedbacks()
 			},
@@ -82,7 +112,7 @@ export function getActionDefinitions(self) {
 				if (!action.options.selected) {
 					myInput = action.options.input
 				}
-				self.sendCommmand(`SW ${myInput} ` + generateNumberString(self.CHOICES_OUTPUTS.length))
+				self.sendCommand(`SW ${myInput} ` + generateNumberString(self.CHOICES_OUTPUTS.length))
 				for (let key in self.outputRoute) {
 					self.updateRoute(key, myInput)
 				}

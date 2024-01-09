@@ -72,5 +72,18 @@ export function getFeedbackDefinitions(self) {
 				return self.outputRoute[feedback.options.output] == feedback.options.input
 			},
 		},
+		locked: {
+			type: 'boolean',
+			name: 'Keys are locked',
+			description: 'The keys on the front of the switch are disabled',
+			options: [],
+			defaultStyle: {
+				color: combineRgb(0, 0, 0),
+				bgcolor: combineRgb(255, 0, 0),
+			},
+			callback: (feedback) => {
+				return self.keylock == 1
+			}
+		},
 	}
 }

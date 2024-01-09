@@ -110,6 +110,40 @@ export function getPresetDefinitions(self) {
 		}
 	}
 
+	presets['toggle-keylock'] = {
+		type: 'button',
+		category: 'Lock keys',
+		name: 'Toggle Keylock',
+		style: {
+			text: 'Toggle Keylock',
+			size: 'auto',
+			color: combineRgb(255, 255, 255),
+			bgcolor: combineRgb(0, 128, 0),
+		},
+		steps: [
+			{
+				down: [
+					{
+						actionId: 'toggle_keylock',
+						options: {},
+					},
+				],
+				up: [],
+			},
+		],
+		feedbacks: [
+				{
+					feedbackId: 'locked',
+					options: {},
+					style: {
+						color: combineRgb(0, 0, 0),
+						bgcolor: combineRgb(255, 0, 0),
+					},
+				},
+		],
+	}
+
+
 	presets['in-to-out'] = {
 		type: 'button',
 		category: 'In to Out',

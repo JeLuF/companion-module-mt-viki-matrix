@@ -31,6 +31,7 @@ class MTVikiMatrixInstance extends InstanceBase {
 		this.pollMixerTimer = undefined
 		this.selectedInput = 1
 		this.outputRoute = { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8 }
+		this.keylock = 0
 	}
 
 	getConfigFields() {
@@ -126,7 +127,8 @@ class MTVikiMatrixInstance extends InstanceBase {
 
 			this.socket.on('connect', () => {
 				this.log('info', 'Connected')
-				this.sendCommmand('GetSW') //poll current status once upon connect
+				this.sendCommand('GetSW')      //poll current matrix status once upon connect
+				this.sendCommand('GetKeyLock') //poll current keylock status once upon connect
 			})
 
 			let receiveBacklog = ''
@@ -175,13 +177,16 @@ class MTVikiMatrixInstance extends InstanceBase {
 							this.updateRoute(i, tokens[i])
 						}
 						break
+					case 'KeyLockStatus':
+						this.updateLock(tokens[1])
+						break
 				}
 				this.checkFeedbacks()
 			}
 		}
 	}
 
-	sendCommmand(cmd) {
+	sendCommand(cmd) {
 		if (cmd !== undefined) {
 			if (this.socket !== undefined && this.socket.isConnected) {
 				this.socket.send(cmd + '\r\n').catch((e) => {
@@ -203,7 +208,8 @@ class MTVikiMatrixInstance extends InstanceBase {
 
 		if (this.config.polled_data) {
 			this.pollMixerTimer = setInterval(() => {
-				this.sendCommmand('GetSW')
+				this.sendCommand('GetSW')
+				this.sendCommand('GetKeyLock')
 			}, this.config.poll_interval)
 		}
 	}
@@ -242,6 +248,18 @@ class MTVikiMatrixInstance extends InstanceBase {
 		}
 
 		this.updateVariableValues()
+	}
+
+	updateLock(state) {
+		if (!this.socket.isConnected) return
+
+		if (state == 0) {
+			this.keylock = 0
+		} else if (state == 1) {
+			this.keylock = 1
+		} else {
+			this.log('warn', 'updateLock called with invalid state value')
+		}
 	}
 
 	initVariables() {
