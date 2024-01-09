@@ -82,7 +82,6 @@ export function getActionDefinitions(self) {
 				if (!action.options.selected) {
 					myInput = action.options.input
 				}
-				// self.log('warn', self)
 				self.sendCommmand(`SW ${myInput} ` + generateNumberString(self.CHOICES_OUTPUTS.length))
 				for (let key in self.outputRoute) {
 					self.updateRoute(key, myInput)
@@ -93,7 +92,6 @@ export function getActionDefinitions(self) {
 		},
 	}
 }
-
 
 function generateNumberString(n) {
 	let result = ''
@@ -106,4 +104,3 @@ function generateNumberString(n) {
 	result = result.trim()
 	return result
 }
-

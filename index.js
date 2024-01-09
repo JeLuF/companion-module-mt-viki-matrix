@@ -60,41 +60,37 @@ class MTVikiMatrixInstance extends InstanceBase {
 		this.config.port = this.config.port ?? 23
 
 		switch (this.config.matrix_size) {
-			case '2x2': 
+			case '2x2':
 				this.inputs = 2
 				this.outputs = 2
-				break;
-			case '4x2': 
+				break
+			case '4x2':
 				this.inputs = 4
 				this.outputs = 2
-				break;
-			case '4x4': 
+				break
+			case '4x4':
 				this.inputs = 4
 				this.outputs = 4
-				break;
-			case '16x16': 
+				break
+			case '16x16':
 				this.inputs = 16
 				this.outputs = 16
-				break;
-			case '8x8': 
+				break
+			case '8x8':
 			default:
 				this.inputs = 8
 				this.outputs = 8
-				break;
+				break
 		}
 		this.CHOICES_INPUTS = []
-		for (let i=1; i<= this.inputs; i++) {
-			this.CHOICES_INPUTS[i-1] = { id: i.toString(), label: 'IN'+i }
+		for (let i = 1; i <= this.inputs; i++) {
+			this.CHOICES_INPUTS[i - 1] = { id: i.toString(), label: 'IN' + i }
 		}
 
 		this.CHOICES_OUTPUTS = []
-		for (let i=1; i<= this.outputs; i++) {
-			this.CHOICES_OUTPUTS[i-1] = { id: i.toString(), label: 'OUT'+i }
+		for (let i = 1; i <= this.outputs; i++) {
+			this.CHOICES_OUTPUTS[i - 1] = { id: i.toString(), label: 'OUT' + i }
 		}
-		this.log('warn', this.inputs)
-		this.log('warn', this.outputs)
-		this.log('warn', this.CHOICES_INPUTS)
-		this.log('warn', this.CHOICES_OUTPUTS)
 
 		this.setActionDefinitions(getActionDefinitions(this))
 		this.setFeedbackDefinitions(getFeedbackDefinitions(this))
@@ -175,7 +171,7 @@ class MTVikiMatrixInstance extends InstanceBase {
 				*/
 				switch (tokens[0]) {
 					case 'SWS':
-						for (let i=1; i<tokens.length; i++) {
+						for (let i = 1; i < tokens.length; i++) {
 							this.updateRoute(i, tokens[i])
 						}
 						break
@@ -188,7 +184,6 @@ class MTVikiMatrixInstance extends InstanceBase {
 	sendCommmand(cmd) {
 		if (cmd !== undefined) {
 			if (this.socket !== undefined && this.socket.isConnected) {
-			        this.log('warn', cmd)
 				this.socket.send(cmd + '\r\n').catch((e) => {
 					this.log('debug', `Send failed: ${e?.message ?? e}`)
 				})
