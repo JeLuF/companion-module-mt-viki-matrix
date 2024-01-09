@@ -1,0 +1,289 @@
+<html xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<style>
+.style0
+	{
+	text-align:general;
+	vertical-align:middle;
+	white-space:nowrap;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri;
+	border:none;
+	}
+.font0
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri;}
+td
+	{
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri;
+	text-align:general;
+	vertical-align:middle;
+	border:dotted 1px silver;
+	white-space:nowrap;}
+.xl65
+	{
+	background:yellow;}
+.xl66
+	{
+	font-weight:700;}
+</style>
+
+
+</head>
+
+<body link=blue vlink=purple>
+
+<table cellpadding=0 cellspacing=0 width=1270 style='border-collapse:
+ collapse;'>
+ <tr  >
+  <td  class=xl66 width=187 >Function</td>
+  <td width=70 style='width:53pt'></td>
+  <td class=xl66 width=314 style='width:236pt'>Command</td>
+  <td width=321 style='width:241pt'></td>
+  <td width=63 style='width:47pt'></td>
+  <td width=63 style='width:47pt'></td>
+  <td width=63 style='width:47pt'></td>
+  <td width=63 style='width:47pt'></td>
+  <td width=63 style='width:47pt'></td>
+  <td width=63 style='width:47pt'></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>switch</td>
+  <td>T</td>
+  <td>SW Inport Outport1 Output2</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>SWS 1 2 3 4</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>check switching status</td>
+  <td>T</td>
+  <td>GetSW</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>SWS 1 2 3 4</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>check MCU software version</td>
+  <td>T</td>
+  <td>GetMCUFWVer</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>MCUVer 01.00.00</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  colspan=10 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>TitleLabelTable</td>
+  <td>T</td>
+  <td>SetTitleLable xxxxx</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>TitleLable xxxxx</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>ServiceTypeTable</td>
+  <td>T</td>
+  <td>SetServiceType xxxx</td>
+  <td>LCD Readout1!</td>
+  <td colspan=6 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>ServiceType xxxx</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>ServiceNumTable</td>
+  <td></td>
+  <td>SetServiceNum xxxx</td>
+  <td>LCD Readout2!</td>
+  <td colspan=6 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  colspan=2 ></td>
+  <td>ServiceNum xxxx</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>EDID</td>
+  <td>T</td>
+  <td>SetEDID Inport EdidSelect</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>InPortEdid Inport EdidSelect</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>Set system lock status</td>
+  <td>T</td>
+  <td>SetKeyLock 1/0</td>
+  <td>GUI,PC-&gt;MCU;PC-&gt;GUI</td>
+  <td colspan=6 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>KeyLockStatus 1</td>
+  <td>MCU-&gt;GUI,PC</td>
+  <td colspan=6 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>check system lock status</td>
+  <td>T</td>
+  <td>GetKeyLock</td>
+  <td>GUI,PC-&gt;MCU</td>
+  <td colspan=6 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>KeyLockStatus 1</td>
+  <td>MCU-&gt;GUI,PC</td>
+  <td colspan=6 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>check IP address</td>
+  <td>T</td>
+  <td>GetIP</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>IP 192.168.1.186</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  colspan=10 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>check IP Mask</td>
+  <td></td>
+  <td>GetIPMask</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  colspan=2 ></td>
+  <td>IPMask 255.255.255.0</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>check input HDCP</td>
+  <td>T</td>
+  <td>GetInPortHDCP</td>
+  <td colspan=7 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>InPortHDCPS 1 0 1 1</td>
+  <td>can send to GUI</td>
+  <td colspan=6 ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>check output HDCP</td>
+  <td>T</td>
+  <td>GetOutPortHDCP</td>
+  <td colspan=7  ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>OutPortHDCPS 0 1 2 2</td>
+  <td>0:Disable HDCP,1: Enable:2 Follow Inport Hdcp</td>
+  <td colspan=6  ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>set output HDCP</td>
+  <td>T</td>
+  <td>SetOutPortHDCP Outport 0/1/2</td>
+  <td colspan=7  ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>OutPortHDCPS X1 X2 X3 X4</td>
+  <td>X1,X2 X3 X4 is outputport HDCP status</td>
+  <td colspan=6  ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  colspan=3></td>
+  <td>0:off,1:1.4,2,2.0,3:2.2</td>
+  <td colspan=6  ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  colspan=10></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>Set EDID DATA</td>
+  <td>T</td>
+  <td>SetEDIDData x<span> </span>xxxxxxxx</td>
+  <td>x: which edid,</td>
+  <td colspan=2  ></td>
+  <td colspan=4  >xxxxxxxx is ASCII format 256byte</td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>SetEDIDData OK</td>
+  <td colspan=7  ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'>Get EDID DATA</td>
+  <td>T</td>
+  <td>GetEDIDData x</td>
+  <td colspan=7  ></td>
+ </tr>
+ <tr  style='height:15.0pt'>
+  <td  style='height:15.0pt'></td>
+  <td>R</td>
+  <td>EDIDData y xxxxxx</td>
+  <td>y: which edid xxxxx: data</td>
+  <td colspan=6  ></td>
+ </tr>
+
+</table>
+
+</body>
+
+</html>
