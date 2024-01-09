@@ -6,4 +6,4 @@ See HELP.md and LICENSE
 
 Product info at https://www.mt-viki.net/product/hdmi-matrix-switcher-8x8-4k-30hz-with-ir-remote-control/
 
-Protocol specifications can be found at https://github.com/bitfocus/companion-module-requests/issues/975
+Protocol specifications can be found in the `docs` directory
